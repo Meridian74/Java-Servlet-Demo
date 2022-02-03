@@ -19,8 +19,6 @@ public class DemoServlet extends HttpServlet {
         // Set the response message's MIME type
         response.setContentType("text/html;charset=UTF-8");
 
-        // Allocate a output writer to write the response message into the network socket
-
         // Write the response message, in an HTML page
         try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
@@ -28,8 +26,7 @@ public class DemoServlet extends HttpServlet {
             out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
             out.println("<title>Test Servlet</title></head>");
             out.println("<body>");
-            out.println("<h1>Hello, world!</h1>");  // says Hello
-            // Echo client's request information
+            out.println("<h1>Hello, world!</h1>");
             out.println("<p>Request URI: " + request.getRequestURI() + "</p>");
             out.println("<p>Protocol: " + request.getProtocol() + "</p>");
             out.println("<p>PathInfo: " + request.getPathInfo() + "</p>");
