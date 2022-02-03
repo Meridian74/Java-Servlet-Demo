@@ -1,6 +1,5 @@
 package test;
 
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,16 +14,15 @@ public class DemoServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException {
+            throws IOException {
 
         // Set the response message's MIME type
         response.setContentType("text/html;charset=UTF-8");
 
         // Allocate a output writer to write the response message into the network socket
-        PrintWriter out = response.getWriter();
 
         // Write the response message, in an HTML page
-        try {
+        try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
             out.println("<html><head>");
             out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
@@ -43,9 +41,6 @@ public class DemoServlet extends HttpServlet {
             // end of HTML content
             out.println("</body>");
             out.println("</html>");
-
-        } finally {
-            out.close();  // Always close the output writer
         }
     }
 }
