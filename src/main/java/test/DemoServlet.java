@@ -9,8 +9,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 
-@WebServlet(name = "DemoServlet", urlPatterns = "/hello")
+//@WebServlet(name = "DemoServlet", urlPatterns = {"/hello"})
 public class DemoServlet extends HttpServlet {
+
+    private LocalDateTime servletStart;
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -24,20 +26,30 @@ public class DemoServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html><head>");
             out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
-            out.println("<title>Test Servlet</title></head>");
+            out.println("<title>Time now!</title></head>");
             out.println("<body>");
-            out.println("<h1>Hello, world!</h1>");
+            out.println("<h1>Mennyi az idő</h1>");
+            out.println("<br/><p>Kérés adatai:</p><br/>");
             out.println("<p>Request URI: " + request.getRequestURI() + "</p>");
             out.println("<p>Protocol: " + request.getProtocol() + "</p>");
             out.println("<p>PathInfo: " + request.getPathInfo() + "</p>");
             out.println("<p>Remote Address: " + request.getRemoteAddr() + "</p>");
 
-            // Echo current time of server
-            out.println("<p>Local time of server: <strong>" + LocalDateTime.now() + "</strong></p>");
-
+            out.println("<br/><br/><p>Most éppen ennyi az idő: <strong>" + LocalDateTime.now() + "</strong></p>");
+            out.println("<br/><br/><p>Servlet indítási időpontja: <strong>" + servletStart + "</strong></p>");
             // end of HTML content
             out.println("</body>");
             out.println("</html>");
         }
+    }
+
+    @Override
+    public String getServletInfo() {
+        return "It is a test servlet!";
+    }
+
+    @Override
+    public void init() {
+        servletStart = LocalDateTime.now();
     }
 }
