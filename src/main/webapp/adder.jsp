@@ -4,22 +4,36 @@
         <meta charset="UTF-8" />
         <title>Title</title>
     </head>
+
     <%@ page import = "java.* " %>
     <%@ page contentType="text/html; charset=UTF-8" %>
+
     <body>
-        <%! int sum; int num1; int num2; %>
+
+        <%@ page errorPage="exception.jsp" %>
         <%
             request.setCharacterEncoding("UTF-8");
-            if (request.getParameter("firstNum") != null &&
-                    request.getParameter("firstNum") != "") {
-                num1 = Integer.parseInt(request.getParameter("firstNum"));
+
+            String firstNum = request.getParameter("firstNum");
+            if (firstNum != null && !firstNum.equals("")) {
+                request.setAttribute("num1", firstNum);
             }
-            if (request.getParameter("secondNum") != null &&
-                    request.getParameter("secondNum") != "") {
-                num2 = Integer.parseInt(request.getParameter("secondNum"));
+
+            String secondNum = request.getParameter("secondNum");
+            if (secondNum != null && !secondNum.equals("")) {
+                request.setAttribute("num2", secondNum);
             }
-            sum = num1 + num2;
-            out.println("A(z) " + num1 + " és " + num2 + " összege: " + sum);
+
+            int result = Integer.parseInt(firstNum) + Integer.parseInt(secondNum);
+            request.setAttribute("result", result);
         %>
+
+        <%-- this code only for trying jsp:include --%>
+        <jsp:include page="show.jsp" >
+            <jsp:param name="result" value="${result}" />
+            <jsp:param name="num1" value="${num1}" />
+            <jsp:param name="num2" value="${num2}" />
+        </jsp:include>
+
     </body>
 </html>
