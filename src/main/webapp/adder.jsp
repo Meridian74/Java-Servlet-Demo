@@ -2,7 +2,7 @@
 <html lang="hu">
     <head>
         <meta charset="UTF-8" />
-        <title>Title</title>
+        <title>Adder</title>
     </head>
 
     <%@ page import = "java.* " %>
@@ -34,6 +34,16 @@
             <jsp:param name="num1" value="${num1}" />
             <jsp:param name="num2" value="${num2}" />
         </jsp:include>
+
+        <br />
+
+        <form method="get" action="query-two-numbers.jsp">
+            <input type="submit" value="Ismét">
+        </form>
+        <form method="get" action="index.jsp">
+            <input type="submit" value="Kezdő oldal">
+        </form>
+
 
     </body>
 </html>

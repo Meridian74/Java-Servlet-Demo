@@ -1,8 +1,9 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="hu">
     <head>
         <meta charset="UTF-8" />
-        <title>Title</title>
+        <title>Számbekérő</title>
     </head>
     <body>
         <form method="post" action="adder.jsp">

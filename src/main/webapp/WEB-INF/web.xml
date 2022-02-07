@@ -5,16 +5,37 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
     <servlet>
-        <servlet-name>test.DemoServlet</servlet-name>
+        <servlet-name>DemoServlet</servlet-name>
         <servlet-class>test.DemoServlet</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>test.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Adder</servlet-name>
+        <servlet-class>test.AdderServlet</servlet-class>
+    </servlet>
+
 
     <!-- Note: All <servlet> elements MUST be grouped together and
       placed IN FRONT of the <servlet-mapping> elements -->
 
     <servlet-mapping>
-        <servlet-name>test.DemoServlet</servlet-name>
-        <url-pattern>/hello</url-pattern>
+        <servlet-name>DemoServlet</servlet-name>
+        <url-pattern>/demo</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Adder</servlet-name>
+        <url-pattern>/adder</url-pattern>
     </servlet-mapping>
 
 </web-app>
