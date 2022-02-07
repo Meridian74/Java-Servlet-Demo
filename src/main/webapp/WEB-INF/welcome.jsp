@@ -11,8 +11,10 @@
         Válassz az alábbiak közül!
         <br />
         <br />
-        <a href= <%= request.getContextPath() %>/login>Bejelentkezés</a> |
+
+        <a href= <%= request.getContextPath() + request.getAttribute("link-switch") %></a> |
         <a href= <%= request.getContextPath() %>/demo>Mennyi az idő</a> |
-        <a href="<%= request.getContextPath() %>/adder">Összeadás</a><br />
+        <a href= <%= request.getContextPath() %>/adder>Összeadás</a>
+        <br />
     </body>
 </html>
