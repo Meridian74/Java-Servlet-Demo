@@ -3,6 +3,8 @@ package test;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
 
 public class LoginDao {
 
@@ -15,11 +17,12 @@ public class LoginDao {
         ));
     }
 
-    public static boolean validate(String name, String password) {
-        boolean status = false;
+    public static Optional<User> validate(String name, String password) {
+        Optional<User> validatedUser = Optional.empty();
         for (User user: users) {
-            if(user.getUsername().equals(name) && user.getPassword().equals(password)) {
-                status = true;
+            if(user.getUsername().toLowerCase(Locale.ROOT).equals(name) &&
+                    user.getPassword().equals(password)) {
+                validatedUser = Optional.of(user);
                 break;
             }
         }
@@ -41,6 +44,6 @@ public class LoginDao {
 //            System.out.println(e);
 //        }
 
-        return status;
+        return validatedUser;
     }
 }

@@ -6,7 +6,7 @@
         <title>Számbekérő</title>
     </head>
     <body>
-        <form method="post" action="adder.jsp">
+        <form method="post" action="<%= request.getContextPath() %>/adder">
             <fieldset>
                 <legend>Két szám összedaása</legend>
                 <label for="firstNum">Első szám: </label>

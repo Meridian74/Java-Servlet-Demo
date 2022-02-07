@@ -6,7 +6,7 @@
     <title>Login</title>
 </head>
 <body>
-<form action="login" method="post">
+<form action="<%= request.getContextPath() %>/login" method="post">
     <fieldset>
         <legend>Log in:</legend>
             Felhasználói név:<input type="text" name="username"/><br/>

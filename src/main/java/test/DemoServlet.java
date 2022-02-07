@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 
-//@WebServlet(name = "DemoServlet", urlPatterns = {"/hello"})
 public class DemoServlet extends HttpServlet {
 
     private LocalDateTime servletStart;
