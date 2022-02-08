@@ -1,11 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="hu">
     <head>
         <meta charset="UTF-8" />
         <title>Welcome oldal</title>
     </head>
-    <%@ page contentType="text/html; charset=UTF-8" %>
     <body>
         <c:set var="user" value='<%= request.getSession().getAttribute("user") %>' />
         <c:set var="contextPath" value="<%= request.getContextPath() %>" />

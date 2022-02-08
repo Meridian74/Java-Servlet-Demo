@@ -16,6 +16,9 @@ public class LoginDao {
         ));
     }
 
+    private LoginDao() {
+    }
+
     public static Optional<User> validate(String name, String password) {
         Optional<User> validatedUser = Optional.empty();
         for (User user: users) {
