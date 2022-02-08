@@ -1,4 +1,4 @@
-package test;
+package hu.guidance.servletdemo.controller;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

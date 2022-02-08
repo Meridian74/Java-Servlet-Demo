@@ -1,6 +1,5 @@
-package test;
+package hu.guidance.servletdemo.model;
 
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -26,23 +25,6 @@ public class LoginDao {
                 break;
             }
         }
-
-//        try {
-//            Class.forName("oracle.jdbc.driver.OracleDriver");
-//            Connection con = DriverManager.getConnection(
-//                    "jdbc:oracle:thin:@localhost:1521:xe", "system", "oracle");
-//
-//            PreparedStatement ps = con.prepareStatement(
-//                    "select * from userreg where name=? and password=?");
-//            ps.setString(1, name);
-//            ps.setString(2, password);
-//
-//            ResultSet rs = ps.executeQuery();
-//            status = rs.next();
-//
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
 
         return validatedUser;
     }

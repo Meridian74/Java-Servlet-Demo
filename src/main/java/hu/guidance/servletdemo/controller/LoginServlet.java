@@ -1,10 +1,12 @@
-package test;
+package hu.guidance.servletdemo.controller;
 
+import hu.guidance.servletdemo.model.User;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import hu.guidance.servletdemo.model.LoginDao;
 
 import java.io.IOException;
 import java.io.PrintWriter;

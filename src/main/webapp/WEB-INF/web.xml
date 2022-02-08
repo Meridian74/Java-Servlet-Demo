@@ -6,27 +6,27 @@
 
     <servlet>
         <servlet-name>Welcome</servlet-name>
-        <servlet-class>test.WelcomeServlet</servlet-class>
+        <servlet-class>hu.guidance.servletdemo.controller.WelcomeServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>Logout</servlet-name>
-        <servlet-class>test.LogoutServlet</servlet-class>
+        <servlet-class>hu.guidance.servletdemo.controller.LogoutServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>DemoServlet</servlet-name>
-        <servlet-class>test.DemoServlet</servlet-class>
+        <servlet-class>hu.guidance.servletdemo.controller.DemoServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>test.LoginServlet</servlet-class>
+        <servlet-class>hu.guidance.servletdemo.controller.LoginServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>Adder</servlet-name>
-        <servlet-class>test.AdderServlet</servlet-class>
+        <servlet-class>hu.guidance.servletdemo.controller.AdderServlet</servlet-class>
     </servlet>
 
 

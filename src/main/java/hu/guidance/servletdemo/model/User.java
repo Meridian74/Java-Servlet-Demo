@@ -1,4 +1,4 @@
-package test;
+package hu.guidance.servletdemo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

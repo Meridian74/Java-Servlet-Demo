@@ -1,6 +1,5 @@
-package test;
+package hu.guidance.servletdemo.controller;
 
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -36,6 +35,13 @@ public class DemoServlet extends HttpServlet {
 
             out.println("<br/><br/><p>Most éppen ennyi az idő: <strong>" + LocalDateTime.now() + "</strong></p>");
             out.println("<br/><br/><p>Servlet indítási időpontja: <strong>" + servletStart + "</strong></p>");
+            out.println("<form method='get' action='" + request.getContextPath() + "/welcome'>");
+            out.println("<input type='submit' value='Kezdő oldal'>");
+            out.println("</form>");
+            out.println("<form method='get' action='" + request.getContextPath() + "/logout'>");
+            out.println("<input type='submit' value='Kilépés'>");
+            out.println("</form>");
+
             // end of HTML content
             out.println("</body>");
             out.println("</html>");

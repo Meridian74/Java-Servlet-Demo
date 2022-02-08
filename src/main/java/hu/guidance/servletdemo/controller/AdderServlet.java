@@ -1,5 +1,6 @@
-package test;
+package hu.guidance.servletdemo.controller;
 
+import hu.guidance.servletdemo.model.User;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
