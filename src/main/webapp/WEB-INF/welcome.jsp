@@ -11,7 +11,7 @@
         <c:set var="contextPath" value="<%= request.getContextPath() %>" />
 
         Üdvözöllek <c:out value="${user.getUsername()}" />!
-        <br />
+        <br /><br />
         Válassz az alábbiak közül!
         <br />
 
