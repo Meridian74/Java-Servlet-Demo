@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import hu.guidance.servletdemo.model.LoginDao;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -33,12 +34,19 @@ public class LoginServlet extends HttpServlet {
 
             Optional<User> verifiedUser = LoginDao.validate(name, password);
             if (verifiedUser.isPresent()) {
-                RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/get-two-numbers.jsp");
+                HttpSession session = request.getSession(false);
+                if (session != null) {
+                    session.invalidate(); // old session eliminated
+                }
+
                 User user = verifiedUser.get();
-                request.getSession().setAttribute("user", user);
+                session = request.getSession(true); // generate a new session
+                session.setAttribute("user", user);
+                RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/get-two-numbers.jsp");
                 rd.forward(request, response);
+
             } else {
-                out.print("Hibás felhasználói név vagy jelszó!");
+                out.print("<font color=red>Hibás felhasználói név vagy jelszó!</font>");
                 RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
                 rd.include(request, response);
             }

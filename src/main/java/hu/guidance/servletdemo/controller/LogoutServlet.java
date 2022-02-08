@@ -14,11 +14,14 @@ public class LogoutServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         response.setContentType("text/html");
+
         try (PrintWriter out=response.getWriter()) {
-            HttpSession session=request.getSession();
-            session.invalidate();
+            HttpSession session=request.getSession(false);
+            if(session != null) {
+                session.invalidate();
+            }
+
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/welcome");
             rd.include(request, response);
             out.print("You are successfully logged out!");
