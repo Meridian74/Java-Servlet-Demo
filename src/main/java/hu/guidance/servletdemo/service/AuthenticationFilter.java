@@ -10,8 +10,8 @@ public class AuthenticationFilter implements Filter {
     private ServletContext context;
 
     @Override
-    public void init(FilterConfig filterConfig) {
-        this.context = filterConfig.getServletContext();
+    public void init(FilterConfig fc) {
+        this.context = fc.getServletContext();
         this.context.log("AuthenticationFilter inicializálva!");
     }
 
@@ -24,8 +24,7 @@ public class AuthenticationFilter implements Filter {
 
         if (session == null) {
             this.context.log("Nem engedélyezett kérés!");
-            RequestDispatcher rd = context.getRequestDispatcher("/WEB-INF/welcome.jsp");
-            rd.forward(request, response);
+            response.sendRedirect(request.getContextPath() + "/add/welcome");
         } else {
             chain.doFilter(request, response);
         }

@@ -1,4 +1,4 @@
-<%@ page import = "java.* " %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="hu">
@@ -7,16 +7,11 @@
         <title>Eredmény</title>
     </head>
     <body>
-        <%= request.getAttribute("result") %>
+        <%@include file="/WEB-INF/_variables.jsp" %>
 
-        <form method="get" action="<%= request.getContextPath() %>/adder">
-            <input type="submit" value="Ismét">
-        </form>
-        <form method="get" action="<%= request.getContextPath() %>/welcome">
-            <input type="submit" value="Kezdő oldal">
-        </form>
-        <form method="get" action="<%= request.getContextPath() %>/logout">
-            <input type="submit" value="Kilépés">
-        </form>
+        <%= request.getAttribute("result") %>
+        <br />
+
+        <%@include file="/WEB-INF/_menu.jsp" %>
     </body>
 </html>

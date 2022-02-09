@@ -7,12 +7,12 @@ import java.util.Optional;
 
 public class LoginDao {
 
-    private static List<User> users;
+    private static final List<User> users;
 
     static {
         users = new ArrayList<>(List.of(
-                new User(1, "admin", "123456"),
-                new User( 2, "senkialfonz", "123456")
+                new User(1, "admin", "123456", "Adminisztrátor"),
+                new User( 2, "senkialfonz", "123456", "Senki Alfonz")
         ));
     }
 

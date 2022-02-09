@@ -16,7 +16,7 @@ class LoginDaoTest {
         String password = "123456";
         Optional<User> result = LoginDao.validate(name, password);
 
-        assertEquals("senkialfonz", result.get().getUsername());
+        assertEquals("Senki Alfonz", result.get().getName());
     }
 
     @Test
@@ -34,13 +34,13 @@ class LoginDaoTest {
         String password = "123456";
         Optional<User> result = LoginDao.validate(name, password);
 
-        assertEquals("admin", result.get().getPassword());
+        assertEquals("123456", result.get().getPassword());
     }
 
     @Test
     void invalidPassword() {
-        String name = "anybody";
-        String password = "123456";
+        String name = "admin";
+        String password = "abc123";
         Optional<User> result = LoginDao.validate(name, password);
 
         assertTrue(result.isEmpty());

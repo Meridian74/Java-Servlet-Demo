@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 
-public class DemoServlet extends HttpServlet {
+public class ShowDateTimeServlet extends HttpServlet {
 
     private LocalDateTime servletStart;
 

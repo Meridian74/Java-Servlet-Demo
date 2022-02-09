@@ -16,9 +16,10 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
 
-        try (PrintWriter out=response.getWriter()) {
-            HttpSession session=request.getSession(false);
-            if(session != null) {
+        try (PrintWriter out = response.getWriter()) {
+            HttpSession session = request.getSession(false);
+
+            if (session != null) {
                 session.invalidate();
             }
 

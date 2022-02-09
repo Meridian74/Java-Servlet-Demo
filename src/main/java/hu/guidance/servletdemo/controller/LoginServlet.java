@@ -42,6 +42,7 @@ public class LoginServlet extends HttpServlet {
                 User user = verifiedUser.get();
                 session = request.getSession(true); // generate a new session
                 session.setAttribute("user", user);
+                session.setAttribute("loggedIn", true);
                 RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/get-two-numbers.jsp");
                 rd.forward(request, response);
 
