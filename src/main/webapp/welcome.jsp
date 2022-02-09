@@ -20,5 +20,6 @@
 
         <br /><br />Válassz az alábbiak közül!<br />
         <%@include file="/items/_menu.jsp" %>
+
     </body>
 </html>

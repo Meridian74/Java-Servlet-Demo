@@ -11,17 +11,15 @@ import java.io.IOException;
 public class AdderServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException {
+            throws IOException {
 
         response.setContentType("text/html;charset=UTF-8");
         User user = (User) request.getSession().getAttribute("user");
-        RequestDispatcher rd;
+        String path = request.getContextPath();
         if (user != null) {
-            rd = getServletContext().getRequestDispatcher("/app/get-two-numbers.jsp");
-            rd.forward(request, response);
+            response.sendRedirect(path + "/app/get-two-numbers.jsp");
         } else {
-            rd = getServletContext().getRequestDispatcher("/login.jsp");
-            rd.forward(request, response);
+            response.sendRedirect(path + "/login");
         }
     }
 

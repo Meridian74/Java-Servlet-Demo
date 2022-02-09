@@ -16,9 +16,9 @@ import java.util.Optional;
 public class LoginServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
-        rd.forward(request, response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String path = request.getContextPath();
+        response.sendRedirect(path + "/login.jsp");
     }
 
     @Override
@@ -42,8 +42,8 @@ public class LoginServlet extends HttpServlet {
                 User user = verifiedUser.get();
                 session = request.getSession(true); // generate a new session
                 session.setAttribute("user", user);
-                RequestDispatcher rd = getServletContext().getRequestDispatcher("/app/get-two-numbers.jsp");
-                rd.forward(request, response);
+                String path = request.getContextPath();
+                response.sendRedirect(path + "/app/adder");
 
             } else {
                 out.print("<font color=red>Hibás felhasználói név vagy jelszó!</font>");

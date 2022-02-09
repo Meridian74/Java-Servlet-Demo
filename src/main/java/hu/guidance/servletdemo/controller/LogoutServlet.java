@@ -20,12 +20,14 @@ public class LogoutServlet extends HttpServlet {
             HttpSession session = request.getSession(false);
 
             if (session != null) {
+                session.removeAttribute("user");
                 session.invalidate();
             }
 
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/welcome");
+            out.println("Sikeresen kijelentkeztél!");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
             rd.include(request, response);
-            out.print("You are successfully logged out!");
+
         }
 
     }
