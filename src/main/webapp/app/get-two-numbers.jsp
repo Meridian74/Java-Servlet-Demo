@@ -7,7 +7,7 @@
         <title>Számbekérő</title>
     </head>
     <body>
-        <%@include file="/WEB-INF/_variables.jsp" %>
+        <%@include file="/items/_variables.jsp" %>
 
         <form method="post" action="${contextPath}/app/adder">
             <fieldset>
@@ -20,7 +20,7 @@
             </fieldset>
         </form>
 
-        <%@include file="/WEB-INF/_menu.jsp" %>
+        <%@include file="/items/_menu.jsp" %>
 
     </body>
 </html>

@@ -17,11 +17,12 @@ public class AdderServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
         RequestDispatcher rd;
         if (user != null) {
-            rd = getServletContext().getRequestDispatcher("/WEB-INF/get-two-numbers.jsp");
+            rd = getServletContext().getRequestDispatcher("/app/get-two-numbers.jsp");
+            rd.forward(request, response);
         } else {
-            rd = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
+            rd = getServletContext().getRequestDispatcher("/login.jsp");
+            rd.forward(request, response);
         }
-        rd.forward(request, response);
     }
 
     @Override
@@ -40,7 +41,7 @@ public class AdderServlet extends HttpServlet {
         }
 
         request.setAttribute("result", result);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/show.jsp");
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/app/show.jsp");
         rd.forward(request, response);
     }
 }

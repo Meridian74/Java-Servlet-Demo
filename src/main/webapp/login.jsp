@@ -15,7 +15,7 @@
             Be vagy már jelentkezve, előbb lépjél ki!
         </c:when>
         <c:otherwise>
-            <form action="${contextPath}/app/login" method="post">
+            <form action="${contextPath}/login" method="post">
                 <fieldset>
                     <legend>Log in:</legend>
                         Felhasználói név:<input type="text" name="username"/><br/>

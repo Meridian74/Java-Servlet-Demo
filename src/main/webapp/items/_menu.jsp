@@ -10,7 +10,7 @@
 <a href="${contextPath}/app/adder">Összeadás</a> |
 <c:choose>
     <c:when test="${empty user}">
-        <a href="${contextPath}/app/login">Belépés</a> |
+        <a href="${contextPath}/login">Belépés</a> |
     </c:when>
     <c:otherwise>
         <a href="${contextPath}/app/logout">Kilépés</a> |

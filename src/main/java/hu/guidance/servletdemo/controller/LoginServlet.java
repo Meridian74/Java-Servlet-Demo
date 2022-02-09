@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
         rd.forward(request, response);
     }
 
@@ -42,13 +42,12 @@ public class LoginServlet extends HttpServlet {
                 User user = verifiedUser.get();
                 session = request.getSession(true); // generate a new session
                 session.setAttribute("user", user);
-                session.setAttribute("loggedIn", true);
-                RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/get-two-numbers.jsp");
+                RequestDispatcher rd = getServletContext().getRequestDispatcher("/app/get-two-numbers.jsp");
                 rd.forward(request, response);
 
             } else {
                 out.print("<font color=red>Hibás felhasználói név vagy jelszó!</font>");
-                RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
+                RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
                 rd.include(request, response);
             }
         }

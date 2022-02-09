@@ -7,7 +7,7 @@
         <title>Welcome oldal</title>
     </head>
     <body>
-        <%@include file="/WEB-INF/_variables.jsp" %>
+        <%@include file="/items/_variables.jsp" %>
 
         <c:choose>
             <c:when test="${!empty user}" >
@@ -19,6 +19,6 @@
         </c:choose>
 
         <br /><br />Válassz az alábbiak közül!<br />
-        <%@include file="/WEB-INF/_menu.jsp" %>
+        <%@include file="/items/_menu.jsp" %>
     </body>
 </html>

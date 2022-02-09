@@ -7,11 +7,11 @@
         <title>Eredmény</title>
     </head>
     <body>
-        <%@include file="/WEB-INF/_variables.jsp" %>
+        <%@include file="/items/_variables.jsp" %>
 
         <%= request.getAttribute("result") %>
         <br />
 
-        <%@include file="/WEB-INF/_menu.jsp" %>
+        <%@include file="/items/_menu.jsp" %>
     </body>
 </html>
