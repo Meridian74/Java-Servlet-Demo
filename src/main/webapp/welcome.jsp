@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html lang="hu">
     <head>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
         <meta charset="UTF-8" />
         <title>Welcome oldal</title>
     </head>
@@ -10,8 +13,8 @@
         <%@include file="/items/_variables.jsp" %>
 
         <c:choose>
-            <c:when test="${!empty user}" >
-                Üdvözöllek <c:out value="${user.getName()}" />!
+            <c:when test="${!empty name}" >
+                Üdvözöllek <c:out value="${name}" />!
             </c:when>
             <c:otherwise>
                 Üdvözöllek Kedves Vendég!
@@ -20,6 +23,12 @@
 
         <br /><br />Válassz az alábbiak közül!<br />
         <%@include file="/items/_menu.jsp" %>
+
+        <script>
+          function preventBack(){window.history.forward();}
+          setTimeout("preventBack()", 0);
+          window.onunload=function(){null};
+        </script>
 
     </body>
 </html>

@@ -49,7 +49,7 @@
 
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
-        <url-pattern>/app/logout</url-pattern>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
@@ -76,7 +76,7 @@
 
     <filter-mapping>
         <filter-name>AuthFilter</filter-name>
-        <url-pattern>/app/**</url-pattern>
+        <url-pattern>/app/*</url-pattern>
     </filter-mapping>
 
 </web-app>
