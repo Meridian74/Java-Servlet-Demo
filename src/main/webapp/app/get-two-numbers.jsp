@@ -19,7 +19,7 @@
                 <input type="number" id="firstNum" name="firstNum" /><br />
                 <label for="secondNum">Második szám: </label>
                 <input type="number" id="secondNum" name="secondNum" /><br />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Elküld" />
             </fieldset>
         </form>
 

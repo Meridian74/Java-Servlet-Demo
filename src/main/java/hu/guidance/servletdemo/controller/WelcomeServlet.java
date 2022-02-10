@@ -12,7 +12,7 @@ public class WelcomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/welcome.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/welcome.jsp");
         rd.forward(request, response);
     }
 }

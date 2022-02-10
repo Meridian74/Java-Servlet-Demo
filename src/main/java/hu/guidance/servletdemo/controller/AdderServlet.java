@@ -1,6 +1,5 @@
 package hu.guidance.servletdemo.controller;
 
-import hu.guidance.servletdemo.model.User;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -13,14 +12,9 @@ public class AdderServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
-        response.setContentType("text/html;charset=UTF-8");
-        User user = (User) request.getSession().getAttribute("user");
         String path = request.getContextPath();
-        if (user != null) {
-            response.sendRedirect(path + "/app/get-two-numbers.jsp");
-        } else {
-            response.sendRedirect(path + "/login");
-        }
+        response.sendRedirect(path + "/app/get-two-numbers.jsp");
+
     }
 
     @Override
@@ -39,7 +33,7 @@ public class AdderServlet extends HttpServlet {
         }
 
         request.setAttribute("result", result);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/app/show.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/app/show.jsp");
         rd.forward(request, response);
     }
 }

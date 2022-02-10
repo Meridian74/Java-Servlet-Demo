@@ -11,8 +11,8 @@ public class LoginDao {
 
     static {
         users = new ArrayList<>(List.of(
-                new User(1, "admin", "123456", "Adminisztrátor"),
-                new User( 2, "senkialfonz", "123456", "Senki Alfonz")
+                new User(1, "admin", "123456", "Adminisztrátor", 0),
+                new User( 2, "senkialfonz", "123456", "Senki Alfonz", 0)
         ));
     }
 
@@ -20,15 +20,21 @@ public class LoginDao {
     }
 
     public static Optional<User> validate(String name, String password) {
-        Optional<User> validatedUser = Optional.empty();
         for (User user: users) {
             if(user.getUsername().toLowerCase(Locale.ROOT).equals(name) &&
                     user.getPassword().equals(password)) {
-                validatedUser = Optional.of(user);
-                break;
+                return Optional.of(user);
             }
         }
+        return Optional.empty();
+    }
 
-        return validatedUser;
+    public static Optional<Integer> getTokenById(long givenId) {
+        for (User user: users) {
+            if(user.getId() == givenId) {
+                return Optional.of(user.getToken());
+            }
+        }
+        return Optional.empty();
     }
 }

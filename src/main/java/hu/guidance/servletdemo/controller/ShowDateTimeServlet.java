@@ -27,14 +27,14 @@ public class ShowDateTimeServlet extends HttpServlet {
             out.println("<title>Time now!</title></head>");
             out.println("<body>");
             out.println("<h1>Mennyi az idő</h1>");
-            out.println("<br/><p>Kérés adatai:</p><br/>");
+            out.println("<p>Kérés adatai:</p>");
             out.println("<p>Request URI: " + request.getRequestURI() + "</p>");
             out.println("<p>Protocol: " + request.getProtocol() + "</p>");
             out.println("<p>PathInfo: " + request.getPathInfo() + "</p>");
             out.println("<p>Remote Address: " + request.getRemoteAddr() + "</p>");
 
-            out.println("<br/><br/><p>Most éppen ennyi az idő: <strong>" + LocalDateTime.now() + "</strong></p>");
-            out.println("<br/><br/><p>Servlet indítási időpontja: <strong>" + servletStart + "</strong></p>");
+            out.println("<br/><p>Most éppen ennyi az idő: <strong>" + LocalDateTime.now() + "</strong></p>");
+            out.println("<p>Servlet indítási időpontja: <strong>" + servletStart + "</strong></p>");
             out.println("<form method='get' action='" + request.getContextPath() + "/welcome'>");
             out.println("<input type='submit' value='Kezdő oldal'>");
             out.println("</form>");

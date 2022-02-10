@@ -13,7 +13,7 @@
         <%@include file="/items/_variables.jsp" %>
 
         <c:choose>
-            <c:when test="${!empty user}" >
+            <c:when test="${!empty name}" >
                 Be vagy már jelentkezve, előbb lépjél ki!
                 <br />
             </c:when>
